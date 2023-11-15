@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Head from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
@@ -27,7 +27,7 @@ const ArchivePage = ({ data }) => {
 
     return (
         <Layout>
-            <SEO title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
+            <Head title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
             <div className="index-main">
                 <div className="sidebar px-4 py-2">
                     <Sidebar />

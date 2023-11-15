@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Head from "../components/seo"
 import { FaCheckCircle } from "react-icons/fa"
 import "./index.css"
 
@@ -22,14 +22,14 @@ const AboutPage = (props) => {
 
     return (
         <Layout>
-            <SEO title="About" />
+            <Head title="About" />
             <div className="post-page-main">
                 <div className="sidebar px-4 py-2">
                     <Sidebar />
                 </div>
 
                 <div className="post-main">
-                    <SEO title="About" />
+                    <Head title="About" />
                     <div className="mt-3">
                         <h2 className="heading">About</h2>
                         <p><i>Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usable right out of the box, but minimalist enough to be easily modifiable to suit your needs.</i></p>
