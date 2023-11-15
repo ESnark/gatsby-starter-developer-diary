@@ -1,8 +1,7 @@
 'use strict'
+import siteConfig from "./config"
 
-const siteConfig = require("./config")
-
-module.exports = {
+export default {
   siteMetadata: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -18,7 +17,9 @@ module.exports = {
     },
     labels: siteConfig.labels,
   },
+  graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 
 
 import MobileSocialLinks from "./MobileSocialLinks"
@@ -8,8 +7,16 @@ import MobilePageLinks from "./MobilePageLinks"
 import SocialLinks from "./SocialLinks"
 import MobileBio from "./MobileBio"
 import "./header.css"
+import { IContacts } from "../../interface"
 
-const Header = ({ siteTitle, tagline, author, contacts }) => {
+interface HeaderProps {
+  siteTitle: string;
+  tagline: string;
+  author: string;
+  contacts: IContacts;
+}
+
+const Header: React.FC<HeaderProps> = ({ siteTitle, tagline, author, contacts }) => {
 
   return (
     <header
@@ -42,14 +49,6 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
       <MobileBio author={author} />
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

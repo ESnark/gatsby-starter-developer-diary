@@ -1,6 +1,6 @@
 "use strict"
 
-module.exports = {
+export default {
   url: "https://developer-diary.netlify.com",
   title: "Developer Diary",
   tagline: "Autodidact developer and sometimes hoop-jumper",

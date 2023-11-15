@@ -6,10 +6,16 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Head({ description, lang, meta, title }) {
+interface HeadProps {
+  description?: string;
+  lang?: string;
+  meta?: any[];
+  title: string;
+}
+
+const Head: React.FC<HeadProps> = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -40,19 +46,6 @@ function Head({ description, lang, meta, title }) {
       <meta name="twitter:description" content={metaDescription} />
     </>
   )
-}
-
-Head.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Head.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Head

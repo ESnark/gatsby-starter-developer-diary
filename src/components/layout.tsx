@@ -6,13 +6,12 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./header/header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <StaticQuery
@@ -64,8 +63,8 @@ const Layout = ({ children }) => {
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+interface LayoutProps {
+  children: React.ReactNode
 }
 
 export default Layout

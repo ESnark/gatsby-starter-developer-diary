@@ -3,7 +3,7 @@ import React from "react"
 import "./header.css"
 import willjw3 from "../../images/willjw3.jpg"
 
-const MobileBio = (props) => {
+const MobileBio: React.FC<{ author: string; }> = (props) => {
 
     return (
         <div className="mobile-bio-main">

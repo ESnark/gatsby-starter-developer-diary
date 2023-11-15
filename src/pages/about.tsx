@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/seo"
 import { FaCheckCircle } from "react-icons/fa"
