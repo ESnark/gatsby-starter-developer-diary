@@ -7,9 +7,13 @@ import {
     FaTwitterSquare
 } from "react-icons/fa"
 import "./sidebar.css"
+import { IContacts } from "../../interface"
 
+interface SocialLinksProps {
+    contacts: IContacts
+}
 
-const SocialLinks = ({ contacts }) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ contacts }) => {
     return (
         <div className="side-social-links float-left mt-3 mb-3">
             <a className="text-secondary p-2"

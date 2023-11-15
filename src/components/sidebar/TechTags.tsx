@@ -2,11 +2,28 @@ import React from "react"
 
 import TechTag from "../tags/TechTag"
 
-const TechTags = (props) => {
+interface TechTagsProps {
+    labels: {
+        tag: string;
+        tech: string;
+        name: string;
+        size: number;
+        color: string;
+    }[]
+    posts: {
+        node: {
+            frontmatter: {
+                tags: string[];
+            }
+        }
+    }[]
+}
+
+const TechTags: React.FC<TechTagsProps> = (props) => {
     const labels = props.labels
     const posts = props.posts
 
-    const labelCount = labels.map(label => {
+    const labelCount: [string, number][] = labels.map(label => {
         let count = 0;
         posts.forEach(post => {
             if (post.node.frontmatter.tags.includes(label.tag)) {
@@ -26,8 +43,8 @@ const TechTags = (props) => {
 
 
 
-    const getTechTags = (tags) => {
-        const techTags = []
+    const getTechTags = (tags: string[]) => {
+        const techTags: React.JSX.Element[] = []
         tags.forEach((tag, i) => {
             labels.forEach((label) => {
                 if (tag === label.tag) {

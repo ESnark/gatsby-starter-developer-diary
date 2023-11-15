@@ -3,7 +3,15 @@ import React from "react"
 import "./tags.css"
 import { Link } from "gatsby";
 
-const TechTag = (props) => {
+interface TechTagProps {
+    tag: string
+    tech: string
+    name: string
+    size: number
+    color: string
+}
+
+const TechTag: React.FC<TechTagProps> = (props) => {
     const { tag, tech, name, size, color } = props
 
     return (

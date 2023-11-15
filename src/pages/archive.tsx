@@ -8,12 +8,46 @@ import Head from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
-const ArchivePage = ({ data }) => {
+interface ArchivePageProps {
+    data: {
+        site: {
+            siteMetadata: {
+                title: string
+                labels: {
+                    tag: string
+                    tech: string
+                    name: string
+                    size: number
+                    color: string
+                }[]
+            }
+        }
+        allMarkdownRemark: {
+            edges: {
+                node: {
+                    excerpt: string
+                    html: string
+                    id: string
+                    frontmatter: {
+                        title: string
+                        date: string
+                        tags: string[]
+                    }
+                    fields: {
+                        slug: string
+                    }
+                }
+            }[]
+        }
+    }
+}
+
+const ArchivePage: React.FC<ArchivePageProps> = ({ data }) => {
     const posts = data.allMarkdownRemark.edges
     const labels = data.site.siteMetadata.labels
 
-    const getTechTags = (tags) => {
-        const techTags = []
+    const getTechTags = (tags: string[]) => {
+        const techTags: React.JSX.Element[] = []
         tags.forEach((tag, i) => {
             labels.forEach((label) => {
                 if (tag === label.tag) {
@@ -27,7 +61,7 @@ const ArchivePage = ({ data }) => {
 
     return (
         <Layout>
-            <Head title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
+            <Head title="Archive" />
             <div className="index-main">
                 <div className="sidebar px-4 py-2">
                     <Sidebar />

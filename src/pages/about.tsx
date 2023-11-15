@@ -8,10 +8,26 @@ import "./index.css"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
-const AboutPage = (props) => {
+interface AboutPageProps {
+    data: {
+        site: {
+            siteMetadata: {
+                labels: {
+                    tag: string
+                    tech: string
+                    name: string
+                    size: number
+                    color: string
+                }[]
+            }
+        }
+    }
+}
+
+const AboutPage: React.FC<AboutPageProps> = (props) => {
     const labels = props.data.site.siteMetadata.labels
     const aboutTags = ["react", "nodejs", "html", "css"]
-    const tags = {}
+    const tags: Record<string, string> = {}
     labels.forEach(label => {
         aboutTags.forEach(tag => {
             if (tag === label.tag) {

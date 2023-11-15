@@ -1,7 +1,8 @@
 'use strict'
+import type { GatsbyConfig } from "gatsby"
 import siteConfig from "./config"
 
-export default {
+const config: GatsbyConfig = {
   siteMetadata: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -90,3 +91,5 @@ export default {
     // `gatsby-plugin-offline`,
   ],
 }
+
+export default config
