@@ -99,7 +99,7 @@ export const listQuery = graphql`
            allMarkdownRemark(
              limit: $limit
              skip: $skip
-             sort: { fields: [frontmatter___date], order: DESC }
+             sort: { frontmatter: { date: DESC } }
              filter: { frontmatter: { published: { eq: true } } }
            ) {
              totalCount
