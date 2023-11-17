@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@emotion/core", "virtual:6bd1214a8b8d837995203ff483c55952a130700ceb3067d86b88683efb77c9bad16a8f650b67fc1d20d92adedd00ae4ce8b6e7fc1273c0db83d1d9685b3062e1#npm:10.3.1"],\
+            ["@types/lodash", "npm:4.14.201"],\
             ["@types/node", "npm:20.9.0"],\
             ["@types/react", "npm:18.2.37"],\
             ["@types/react-dom", "npm:18.2.15"],\
@@ -11405,6 +11406,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["gatsby-starter-developer-diary", "workspace:."],\
             ["@emotion/core", "virtual:6bd1214a8b8d837995203ff483c55952a130700ceb3067d86b88683efb77c9bad16a8f650b67fc1d20d92adedd00ae4ce8b6e7fc1273c0db83d1d9685b3062e1#npm:10.3.1"],\
+            ["@types/lodash", "npm:4.14.201"],\
             ["@types/node", "npm:20.9.0"],\
             ["@types/react", "npm:18.2.37"],\
             ["@types/react-dom", "npm:18.2.15"],\
